@@ -27,8 +27,8 @@ export default () => {
   return (
     <Center gap={32}>
       <Center>
-        <h2 style={{ fontSize: 20 }}>To install dumi-theme-lobehub, run the following command:</h2>
-        <Snippet language={'bash'}>{'$ bun add dumi dumi-theme-lobehub'}</Snippet>
+        <h2 style={{ fontSize: 20 }}>To install dumi-theme-xieyezi, run the following command:</h2>
+        <Snippet language={'bash'}>{'$ bun add dumi dumi-theme-xieyezi'}</Snippet>
       </Center>
       <Features items={items} />
     </Center>

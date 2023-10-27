@@ -1,5 +1,5 @@
 {
-  "name": "dumi-theme-lobehub-example",
+  "name": "dumi-theme-xieyezi-example",
   "scripts": {
     "build": "dumi build",
     "build:analyze": "ANALYZE=1 dumi build",

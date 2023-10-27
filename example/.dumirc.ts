@@ -45,7 +45,7 @@ const themeConfig = {
 export default defineConfig({
   alias: {
     '@': resolve(__dirname, '../src'),
-    'dumi-theme-lobehub': resolve(__dirname, '../src'),
+    'dumi-theme-xieyezi': resolve(__dirname, '../src'),
   },
   codeSplitting: {
     jsStrategy: 'granularChunks',

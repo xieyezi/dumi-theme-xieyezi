@@ -4,7 +4,7 @@ import { devtools } from 'zustand/middleware';
 import { SiteStore, initialState } from './initialState';
 
 export const useSiteStore = create<SiteStore>()(
-  devtools(() => initialState, { name: 'dumi-theme-lobehub' }),
+  devtools(() => initialState, { name: 'dumi-theme-xieyezi' }),
 );
 
 export * from './initialState';

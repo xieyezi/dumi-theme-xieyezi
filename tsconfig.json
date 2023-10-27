@@ -12,8 +12,8 @@
       "@@/*": ["example/.dumi/tmp/*"],
       "@/*": ["src/*"],
       "dumi/theme/*": ["example/.dumi/tmp/dumi/theme/*"],
-      "dumi-theme-lobehub": ["src"],
-      "dumi-theme-lobehub/*": ["src/*", "*"]
+      "dumi-theme-xieyezi": ["src"],
+      "dumi-theme-xieyezi/*": ["src/*", "*"]
     }
   },
   "include": ["src", "tests", ".dumi/**/*", "typings", "example/.dumirc.ts", "*.ts"]

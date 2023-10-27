@@ -8,7 +8,7 @@
 
 <h1>Dumi Theme Lobehub</h1>
 
-dumi-theme-lobehub is a documentation site theme package designed for `Dumi 2`. <br/>It provides a more beautiful and user-friendly development and reading experience based on `@lobehub/ui`
+dumi-theme-xieyezi is a documentation site theme package designed for `Dumi 2`. <br/>It provides a more beautiful and user-friendly development and reading experience based on `@lobehub/ui`
 
 [![][npm-release-shield]][npm-release-link]
 [![][github-releasedate-shield]][github-releasedate-link]
@@ -36,6 +36,8 @@ dumi-theme-lobehub is a documentation site theme package designed for `Dumi 2`. 
 - [🤯 Usage](#-usage)
 - [⌨️ Local Development](#️-local-development)
 - [🤝 Contributing](#-contributing)
+- [🔗 Links](#-links)
+  - [More Products](#more-products)
 
 ####
 
@@ -58,12 +60,12 @@ dumi-theme-lobehub is a documentation site theme package designed for `Dumi 2`. 
 
 ## 📦 Installation
 
-To install `dumi-theme-lobehub`, run the following command:
+To install `dumi-theme-xieyezi`, run the following command:
 
 [![][bun-shield]][bun-link]
 
 ```bash
-$ bun add dumi dumi-theme-lobehub
+$ bun add dumi dumi-theme-xieyezi
 ```
 
 <div align="right">
@@ -106,7 +108,7 @@ interface SiteThemeConfig {
 ```
 
 > **Note**\
-> For detailed configuration, please refer to the [📘 Type file](https://github.com/lobehub/dumi-theme-lobehub/blob/master/src/types/config.ts) / [📘 Example](https://github.com/lobehub/dumi-theme-lobehub/blob/master/example/.dumirc.ts).
+> For detailed configuration, please refer to the [📘 Type file](https://github.com/lobehub/dumi-theme-xieyezi/blob/master/src/types/config.ts) / [📘 Example](https://github.com/lobehub/dumi-theme-xieyezi/blob/master/example/.dumirc.ts).
 
 <div align="right">
 
@@ -123,8 +125,8 @@ You can use Github Codespaces for online development:
 Or clone it for local development:
 
 ```bash
-$ git clone https://github.com/lobehub/dumi-theme-lobehub.git
-$ cd dumi-theme-lobehub
+$ git clone https://github.com/lobehub/dumi-theme-xieyezi.git
+$ cd dumi-theme-xieyezi
 $ bun install
 $ bun dev
 ```
@@ -175,28 +177,28 @@ This project is [MIT](./LICENSE) licensed.
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
 [bun-link]: https://bun.sh
 [bun-shield]: https://img.shields.io/badge/-speedup%20with%20bun-black?logo=bun&style=for-the-badge
-[github-action-release-link]: https://github.com/lobehub/dumi-theme-lobehub/actions/workflows/release.yml
-[github-action-release-shield]: https://img.shields.io/github/actions/workflow/status/lobehub/dumi-theme-lobehub/release.yml?label=release&labelColor=black&logo=githubactions&logoColor=white&style=flat-square
-[github-action-test-link]: https://github.com/lobehub/dumi-theme-lobehub/actions/workflows/test.yml
-[github-action-test-shield]: https://img.shields.io/github/actions/workflow/status/lobehub/dumi-theme-lobehub/test.yml?label=test&labelColor=black&logo=githubactions&logoColor=white&style=flat-square
-[github-codespace-link]: https://codespaces.new/lobehub/dumi-theme-lobehub
+[github-action-release-link]: https://github.com/lobehub/dumi-theme-xieyezi/actions/workflows/release.yml
+[github-action-release-shield]: https://img.shields.io/github/actions/workflow/status/lobehub/dumi-theme-xieyezi/release.yml?label=release&labelColor=black&logo=githubactions&logoColor=white&style=flat-square
+[github-action-test-link]: https://github.com/lobehub/dumi-theme-xieyezi/actions/workflows/test.yml
+[github-action-test-shield]: https://img.shields.io/github/actions/workflow/status/lobehub/dumi-theme-xieyezi/test.yml?label=test&labelColor=black&logo=githubactions&logoColor=white&style=flat-square
+[github-codespace-link]: https://codespaces.new/lobehub/dumi-theme-xieyezi
 [github-codespace-shield]: https://github.com/codespaces/badge.svg
-[github-contrib-link]: https://github.com/lobehub/dumi-theme-lobehub/graphs/contributors
-[github-contrib-shield]: https://contrib.rocks/image?repo=lobehub%2Fdumi-theme-lobehub
-[github-contributors-link]: https://github.com/lobehub/dumi-theme-lobehub/graphs/contributors
-[github-contributors-shield]: https://img.shields.io/github/contributors/lobehub/dumi-theme-lobehub?color=c4f042&labelColor=black&style=flat-square
-[github-forks-link]: https://github.com/lobehub/dumi-theme-lobehub/network/members
-[github-forks-shield]: https://img.shields.io/github/forks/lobehub/dumi-theme-lobehub?color=8ae8ff&labelColor=black&style=flat-square
-[github-issues-link]: https://github.com/lobehub/dumi-theme-lobehub/issues
-[github-issues-shield]: https://img.shields.io/github/issues/lobehub/dumi-theme-lobehub?color=ff80eb&labelColor=black&style=flat-square
-[github-license-link]: https://github.com/lobehub/dumi-theme-lobehub/blob/main/LICENSE
-[github-license-shield]: https://img.shields.io/github/license/lobehub/dumi-theme-lobehub?color=white&labelColor=black&style=flat-square
-[github-releasedate-link]: https://github.com/lobehub/dumi-theme-lobehub/releases
-[github-releasedate-shield]: https://img.shields.io/github/release-date/lobehub/dumi-theme-lobehub?labelColor=black&style=flat-square
-[github-stars-link]: https://github.com/lobehub/dumi-theme-lobehub/network/stargazers
-[github-stars-shield]: https://img.shields.io/github/stars/lobehub/dumi-theme-lobehub?color=ffcb47&labelColor=black&style=flat-square
+[github-contrib-link]: https://github.com/lobehub/dumi-theme-xieyezi/graphs/contributors
+[github-contrib-shield]: https://contrib.rocks/image?repo=lobehub%2Fdumi-theme-xieyezi
+[github-contributors-link]: https://github.com/lobehub/dumi-theme-xieyezi/graphs/contributors
+[github-contributors-shield]: https://img.shields.io/github/contributors/lobehub/dumi-theme-xieyezi?color=c4f042&labelColor=black&style=flat-square
+[github-forks-link]: https://github.com/lobehub/dumi-theme-xieyezi/network/members
+[github-forks-shield]: https://img.shields.io/github/forks/lobehub/dumi-theme-xieyezi?color=8ae8ff&labelColor=black&style=flat-square
+[github-issues-link]: https://github.com/lobehub/dumi-theme-xieyezi/issues
+[github-issues-shield]: https://img.shields.io/github/issues/lobehub/dumi-theme-xieyezi?color=ff80eb&labelColor=black&style=flat-square
+[github-license-link]: https://github.com/lobehub/dumi-theme-xieyezi/blob/main/LICENSE
+[github-license-shield]: https://img.shields.io/github/license/lobehub/dumi-theme-xieyezi?color=white&labelColor=black&style=flat-square
+[github-releasedate-link]: https://github.com/lobehub/dumi-theme-xieyezi/releases
+[github-releasedate-shield]: https://img.shields.io/github/release-date/lobehub/dumi-theme-xieyezi?labelColor=black&style=flat-square
+[github-stars-link]: https://github.com/lobehub/dumi-theme-xieyezi/network/stargazers
+[github-stars-shield]: https://img.shields.io/github/stars/lobehub/dumi-theme-xieyezi?color=ffcb47&labelColor=black&style=flat-square
 [npm-release-link]: https://www.npmjs.com/package/@lobehub/chat
 [npm-release-shield]: https://img.shields.io/npm/v/@lobehub/chat?color=369eff&labelColor=black&logo=npm&logoColor=white&style=flat-square
-[pr-welcome-link]: https://github.com/lobehub/dumi-theme-lobehub/pulls
+[pr-welcome-link]: https://github.com/lobehub/dumi-theme-xieyezi/pulls
 [pr-welcome-shield]: https://img.shields.io/badge/%F0%9F%A4%AF%20PR%20WELCOME-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge
 [profile-link]: https://github.com/lobehub
