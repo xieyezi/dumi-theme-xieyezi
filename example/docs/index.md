@@ -1,6 +1,6 @@
 ---
 hero:
-  title: Dumi Theme <b>LobeHub</b>
+  title: Dumi Theme <b>xieyezi</b>
   description: dumi-theme-xieyezi is a documentation site theme package designed for Dumi 2
 ---
 

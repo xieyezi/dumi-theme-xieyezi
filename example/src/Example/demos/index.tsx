@@ -1,6 +1,7 @@
 import { ActionIcon, ActionIconProps, StoryBook, useControls, useCreateStore } from '@lobehub/ui';
 import { folder } from 'leva';
 import * as LucideIcon from 'lucide-react';
+import React from 'react';
 
 export default () => {
   const store = useCreateStore();

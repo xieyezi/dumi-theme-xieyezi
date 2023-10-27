@@ -1,5 +1,6 @@
 import { Features, FeaturesProps, Snippet } from '@lobehub/ui';
-import { Palette, Smartphone, Zap } from 'lucide-react';
+import { Moon, Palette, Smartphone, Zap } from 'lucide-react';
+import React from 'react';
 import { Center } from 'react-layout-kit';
 
 const items: FeaturesProps['items'] = [
@@ -21,6 +22,12 @@ const items: FeaturesProps['items'] = [
     icon: Smartphone,
     title: 'Mobile-Adapted',
   },
+  {
+    description:
+      'Automatic dark mode recognition, NextUI automatically changes the theme when detects HTML theme prop changes.',
+    icon: Moon,
+    title: 'Light & Dark UI',
+  },
 ];
 
 export default () => {
@@ -28,9 +35,11 @@ export default () => {
     <Center gap={32}>
       <Center>
         <h2 style={{ fontSize: 20 }}>To install dumi-theme-xieyezi, run the following command:</h2>
-        <Snippet language={'bash'}>{'$ bun add dumi dumi-theme-xieyezi'}</Snippet>
+        <Snippet language="bash" type="block">
+          {'$ yarn add dumi-theme-xieyezi'}
+        </Snippet>
       </Center>
-      <Features items={items} />
+      <Features columns={4} items={items} />
     </Center>
   );
 };

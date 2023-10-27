@@ -26,8 +26,8 @@ const themeConfig = {
     sourceUrl: `{github}/tree/master/src/{atomId}/index.tsx`,
     type: 'doc',
   },
-  description: 'Lobe UI is an open-source UI component library for building chatbot web apps',
-  footer: 'Made with 🤯 by LobeHub',
+  description: 'dfgdg building chatbot web apps',
+  footer: 'made with by xieyezi',
   giscus: {
     category: 'Q&A',
     categoryId: 'DIC_kwDOJloKoM4CXsCu',
@@ -36,10 +36,9 @@ const themeConfig = {
   },
   name: 'DUMI',
   socialLinks: {
-    discord: 'https://discord.gg/AYFPHvv2jT',
     github: homepage,
   },
-  title: 'Dumi Theme LobeHub',
+  title: 'Dumi Theme xieyezi',
 };
 
 export default defineConfig({
@@ -53,8 +52,11 @@ export default defineConfig({
   define: {
     'process.env': process.env,
   },
-  favicons: ['https://npm.elemecdn.com/@lobehub/assets-favicons/assets/favicon.ico'],
-  locales: [{ id: 'en-US', name: 'English' }],
+  //favicons: ['https://npm.elemecdn.com/@lobehub/assets-favicons/assets/favicon.ico'],
+  locales: [
+    { id: 'en-US', name: 'English' },
+    { id: 'zh-CN', name: '简体中文' },
+  ],
   mfsu: isWin ? undefined : {},
   npmClient: 'pnpm',
   ssr: false,
@@ -66,5 +68,5 @@ export default defineConfig({
   }`,
   ],
   themeConfig,
-  title: 'Dumi Theme LobeHub',
+  title: 'Dumi Theme xieyezi',
 });

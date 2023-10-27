@@ -16,7 +16,7 @@
     "url": "https://github.com/xieyezi/dumi-theme-xieyezi.git"
   },
   "license": "MIT",
-  "author": "xiyezi",
+  "author": "xieyezi",
   "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
