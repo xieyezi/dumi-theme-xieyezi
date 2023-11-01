@@ -1,5 +1,8 @@
 ---
 nav: Components
+group:
+  title: Components
+  order: 1
 title: Example
 description: This is an doc example
 ---
