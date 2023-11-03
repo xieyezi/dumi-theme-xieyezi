@@ -52,12 +52,22 @@ export default defineConfig({
   define: {
     'process.env': process.env,
   },
+
   //favicons: ['https://npm.elemecdn.com/@lobehub/assets-favicons/assets/favicon.ico'],
   locales: [
     { id: 'en-US', name: 'English' },
     { id: 'zh-CN', name: '简体中文' },
   ],
+
+  metas: [
+    {
+      'content': 'IE=edge',
+      'http-equiv': 'X-UA-Compatible',
+    },
+  ],
+
   mfsu: isWin ? undefined : {},
+
   npmClient: 'pnpm',
   ssr: false,
   styles: [
