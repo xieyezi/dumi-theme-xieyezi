@@ -14,7 +14,7 @@ const themeConfig = {
       text: 'Github',
     },
     {
-      link: '/components/example',
+      link: '/components/intro',
       text: 'Get Started',
       type: 'primary',
     },
@@ -53,7 +53,6 @@ export default defineConfig({
     'process.env': process.env,
   },
 
-  //favicons: ['https://npm.elemecdn.com/@lobehub/assets-favicons/assets/favicon.ico'],
   locales: [
     { id: 'en-US', name: 'English' },
     { id: 'zh-CN', name: '简体中文' },
