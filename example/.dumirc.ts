@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 import { resolve } from 'node:path';
 
-import { homepage, name } from '../package.json';
+import { homepage } from '../package.json';
 
 const isWin = process.platform === 'win32';
 
@@ -19,14 +19,9 @@ const themeConfig = {
       type: 'primary',
     },
   ],
-  apiHeader: {
-    docUrl: `{github}/tree/master/src/{atomId}/index.md`,
-    match: ['/components'],
-    pkg: name,
-    sourceUrl: `{github}/tree/master/src/{atomId}/index.tsx`,
-    type: 'doc',
-  },
+  apiHeader: false,
   description: 'dfgdg building chatbot web apps',
+  docStyle: 'block',
   footer: 'made with by xieyezi',
   giscus: {
     category: 'Q&A',
@@ -34,7 +29,7 @@ const themeConfig = {
     repo: 'lobehub/lobe-ui',
     repoId: 'R_kgDOJloKoA',
   },
-  name: 'DUMI',
+  logo: 'https://avatars.githubusercontent.com/u/16821989?v=4',
   socialLinks: {
     github: homepage,
   },
@@ -52,29 +47,19 @@ export default defineConfig({
   define: {
     'process.env': process.env,
   },
-
   locales: [
     { id: 'en-US', name: 'English' },
     { id: 'zh-CN', name: '简体中文' },
+    { id: 'tr-TR', name: '泰语' },
   ],
-
-  metas: [
-    {
-      'content': 'IE=edge',
-      'http-equiv': 'X-UA-Compatible',
-    },
-  ],
-
   mfsu: isWin ? undefined : {},
-
   npmClient: 'pnpm',
   ssr: false,
   styles: [
     `html, body { background: transparent;  }
-
-  @media (prefers-color-scheme: dark) {
-    html, body { background: #000; }
-  }`,
+    @media (prefers-color-scheme: dark) {
+      html, body { background: #000; }
+    }`,
   ],
   themeConfig,
   title: 'Dumi Theme xieyezi',

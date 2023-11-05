@@ -2,11 +2,11 @@ import { Giscus } from '@lobehub/ui';
 import { useResponsive } from 'antd-style';
 import { useOutlet } from 'dumi';
 import { memo, useCallback, useEffect } from 'react';
-import { Center, Flexbox } from 'react-layout-kit';
 import { shallow } from 'zustand/shallow';
 
 import ApiHeader from '@/slots/ApiHeader';
 import Content from '@/slots/Content';
+import Simulator from '@/slots/Simulator';
 import { giscusSel, isApiPageSel, useSiteStore } from '@/store';
 
 import { useStyles } from './styles';
@@ -25,6 +25,8 @@ const Documents = memo(() => {
     document.body.scrollTo(0, 0);
   }, [location.pathname]);
 
+  const Gradient = () => <div className={styles.background} />;
+
   const Comment = useCallback(
     () =>
       giscus && (
@@ -41,26 +43,32 @@ const Documents = memo(() => {
       ),
     [giscus, location.pathname],
   );
+
+  const Doc = () => {
+    return (
+      <div
+        className={styles.content}
+        style={{ marginBottom: 48, marginLeft: 48, padding: mobile ? 0 : 24 }}
+      >
+        {isApiPage ? (
+          <div style={{ padding: mobile ? 16 : 0, width: '100%' }}>
+            <ApiHeader />
+          </div>
+        ) : undefined}
+        <Content>
+          {outlet}
+          {giscus && <Comment />}
+        </Content>
+      </div>
+    );
+  };
+
   return (
-    <>
-      <div className={styles.background} />
-      <Flexbox gap={32} horizontal style={{ marginRight: 100 }}>
-        <Center className={styles.content} style={{ marginBottom: 48, padding: mobile ? 0 : 24 }}>
-          {isApiPage ? (
-            <div style={{ padding: mobile ? 16 : 0, width: '100%' }}>
-              <ApiHeader />
-            </div>
-          ) : undefined}
-          <Content>
-            {outlet}
-            {giscus && <Comment />}
-          </Content>
-        </Center>
-        <Center style={{ background: 'red', height: 600, marginTop: 100, width: 400 }}>
-          <div>fdsfdsf</div>
-        </Center>
-      </Flexbox>
-    </>
+    <div>
+      <Gradient />
+      <Doc />
+      <Simulator src="http://localhost:19006" />
+    </div>
   );
 });
 

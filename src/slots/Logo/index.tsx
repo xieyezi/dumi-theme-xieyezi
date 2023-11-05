@@ -15,12 +15,16 @@ const Logo = memo(() => {
   const { styles, cx } = useStyles();
   const { mobile } = useResponsive();
 
+  const ImgLogo = () => {
+    return <img src={config.logo} />;
+  };
+
   return (
     config && (
       <Link className={cx(styles)} to={'base' in locale ? locale.base : '/'}>
         {config.logo ? (
           <>
-            <Avatar avatar={config.logo} size={mobile ? 32 : 36} />
+            <Avatar size={mobile ? 32 : 36} src={ImgLogo()} />
             {config.name}
           </>
         ) : (
