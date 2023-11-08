@@ -12,6 +12,7 @@ export interface SiteCustomToken {
   headerHeight: number;
   sidebarPadding: number;
   sidebarWidth: number;
+  tocWidth: number;
 }
 
 const generateCustomToken: GetCustomToken<SiteCustomToken> = () => ({
@@ -26,6 +27,7 @@ const generateCustomToken: GetCustomToken<SiteCustomToken> = () => ({
   headerHeight: 64,
   sidebarPadding: 16,
   sidebarWidth: 374,
+  tocWidth: 176,
 });
 
 export default generateCustomToken;

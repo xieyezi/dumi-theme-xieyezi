@@ -1,19 +1,21 @@
 import { Giscus } from '@lobehub/ui';
 import { useResponsive } from 'antd-style';
 import { useOutlet } from 'dumi';
+import isEqual from 'fast-deep-equal';
 import { memo, useCallback, useEffect } from 'react';
 import { shallow } from 'zustand/shallow';
 
 import ApiHeader from '@/slots/ApiHeader';
 import Content from '@/slots/Content';
 import Simulator from '@/slots/Simulator';
-import { giscusSel, isApiPageSel, useSiteStore } from '@/store';
+import { giscusSel, isApiPageSel, themeConfig, useSiteStore } from '@/store';
 
 import { useStyles } from './styles';
 
 const Documents = memo(() => {
   const outlet = useOutlet();
   const { mobile } = useResponsive();
+  const config = useSiteStore(themeConfig, isEqual);
   const { isApiPage, giscus } = useSiteStore(
     (st) => ({ giscus: giscusSel(st), isApiPage: isApiPageSel(st) }),
     shallow,
@@ -21,6 +23,7 @@ const Documents = memo(() => {
   const { styles } = useStyles();
 
   useEffect(() => {
+    console.log(config);
     window.scrollTo(0, 0);
     document.body.scrollTo(0, 0);
   }, [location.pathname]);
@@ -67,7 +70,7 @@ const Documents = memo(() => {
     <div>
       <Gradient />
       <Doc />
-      <Simulator src="http://localhost:19006" />
+      {config.simulator && <Simulator path={config.simulatorPath} src={config.simulatorUrl} />}
     </div>
   );
 });

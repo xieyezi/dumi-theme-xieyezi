@@ -39,6 +39,9 @@ export interface SiteThemeConfig {
   logo?: string;
   logoType?: LogoProps['type'];
   name?: string;
+  simulator?: boolean;
+  simulatorPath: string;
+  simulatorUrl: string;
   siteToken?: SiteConfigToken;
   socialLinks?: {
     discord?: `https://discord.gg/${string}`;

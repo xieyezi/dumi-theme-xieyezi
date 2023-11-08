@@ -30,6 +30,8 @@ const themeConfig = {
     repoId: 'R_kgDOJloKoA',
   },
   logo: 'https://avatars.githubusercontent.com/u/16821989?v=4',
+  simulator: true,
+  simulatorUrl: 'http://localhost:19006',
   socialLinks: {
     github: homepage,
   },

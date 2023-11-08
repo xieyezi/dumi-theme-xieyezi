@@ -5,7 +5,7 @@ export const useStyles = createStyles(({ token, css }) => {
     simulator: css`
       position: absolute;
       z-index: 1;
-      top: calc(${token.docPadding}px + ${token.docHeaderTopHeight}px);
+      top: ${token.docHeaderTopHeight}px;
       right: ${token.docPadding}px;
 
       overflow: hidden;
