@@ -2,13 +2,14 @@ import { createStyles } from 'antd-style';
 
 export const useStyles = createStyles(({ css, token }) => ({
   sidebar: css`
+    height: ${token.sidebarWidth}px;
     margin-top: ${token.headerHeight}px;
   `,
   sidebarInner: css`
     overflow: auto;
     width: 100%;
     height: 100%;
-    padding: 16px;
+    padding: ${token.sidebarPadding}px;
 
     dl {
       margin: 0;

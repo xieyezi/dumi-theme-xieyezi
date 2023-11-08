@@ -50,7 +50,6 @@ export default defineConfig({
   locales: [
     { id: 'en-US', name: 'English' },
     { id: 'zh-CN', name: '简体中文' },
-    { id: 'tr-TR', name: '泰语' },
   ],
   mfsu: isWin ? undefined : {},
   npmClient: 'pnpm',

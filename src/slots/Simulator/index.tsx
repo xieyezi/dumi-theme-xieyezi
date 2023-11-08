@@ -1,7 +1,7 @@
 import { FC, memo, useEffect, useMemo, useState } from 'react';
 
 import { iframeMessageSwap } from '../../plugin/iframeMessageSwap';
-import './index.less';
+import { useStyles } from './style';
 
 export interface SimulatorProps {
   path?: string;
@@ -10,9 +10,10 @@ export interface SimulatorProps {
 
 const Simulator: FC<SimulatorProps> = ({ src, path }) => {
   const [windowHeight, setWindowHeight] = useState(0);
-  // eslint-disable-next-line unused-imports/no-unused-vars, @typescript-eslint/no-unused-vars
   const [scrollTop, setScrollTop] = useState(0);
   const theme = 'dark';
+
+  const { styles, cx } = useStyles();
 
   const simulatorStyle = useMemo(() => {
     const height = Math.min(640, window.innerHeight - 90);
@@ -23,6 +24,7 @@ const Simulator: FC<SimulatorProps> = ({ src, path }) => {
   useEffect(() => {
     window.addEventListener('scroll', () => {
       setScrollTop(window.scrollY);
+      console.log(scrollTop);
     });
     window.addEventListener('resize', () => {
       setWindowHeight(window.innerHeight);
@@ -41,13 +43,13 @@ const Simulator: FC<SimulatorProps> = ({ src, path }) => {
   }, [theme]);
 
   return (
-    <div className="simulator-fixed'">
+    <div className={cx(styles.simulator, scrollTop > 60 ? styles.simulatorFixed : '')}>
       <iframe
         id="simulator"
         ref={iframeMessageSwap.setRef}
         src={src}
         style={simulatorStyle}
-        title="vant-ui-iframe"
+        title="incall-design-rn-iframe"
       />
     </div>
   );
