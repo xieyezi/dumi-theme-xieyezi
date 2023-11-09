@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 import { resolve } from 'node:path';
 
-import { homepage } from '../package.json';
+import { homepage, name } from '../package.json';
 
 const isWin = process.platform === 'win32';
 
@@ -14,13 +14,20 @@ const themeConfig = {
       text: 'Github',
     },
     {
-      link: '/components/intro',
+      link: '/guide/intro',
       text: 'Get Started',
       type: 'primary',
     },
   ],
-  apiHeader: false,
-  description: 'dfgdg building chatbot web apps',
+  apiHeader: {
+    match: ['/components'],
+    pkg: name,
+    services: {
+      NPM: true,
+      UNPKG: true,
+    },
+  },
+  description: 'this is example for dume-theme-xieyezi',
   docStyle: 'block',
   footer: 'made with by xieyezi',
   giscus: {
@@ -30,6 +37,11 @@ const themeConfig = {
     repoId: 'R_kgDOJloKoA',
   },
   logo: 'https://avatars.githubusercontent.com/u/16821989?v=4',
+  nav: [
+    { link: '/guide/intro', title: 'Guide' },
+    { link: '/components/button', title: 'Components' },
+    { link: '/changelog', title: 'Changelog' },
+  ],
   simulator: true,
   simulatorUrl: 'http://localhost:19006',
   socialLinks: {
@@ -52,6 +64,9 @@ export default defineConfig({
   locales: [
     { id: 'en-US', name: 'English' },
     { id: 'zh-CN', name: '简体中文' },
+    { id: 'jp-JP', name: 'にほんご' },
+    { id: 'ko-KR', name: '한국어' },
+    { id: 'tr-TR', name: 'ภาษาไทย' },
   ],
   mfsu: isWin ? undefined : {},
   npmClient: 'pnpm',

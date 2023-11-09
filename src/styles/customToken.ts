@@ -9,7 +9,9 @@ export interface SiteCustomToken {
   docRowMaxWidth: number;
   docSimulatorHeight: number;
   docSimulatorWidth: number;
+  footerHeight: number;
   headerHeight: number;
+  mobilePadding: number;
   sidebarPadding: number;
   sidebarWidth: number;
   tocWidth: number;
@@ -24,7 +26,9 @@ const generateCustomToken: GetCustomToken<SiteCustomToken> = () => ({
   docRowMaxWidth: 1680,
   docSimulatorHeight: 620,
   docSimulatorWidth: 360,
+  footerHeight: 346,
   headerHeight: 64,
+  mobilePadding: 16,
   sidebarPadding: 16,
   sidebarWidth: 374,
   tocWidth: 176,

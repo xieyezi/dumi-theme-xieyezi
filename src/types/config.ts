@@ -1,6 +1,7 @@
 import type { FeaturesProps, FooterProps, HeroProps, LogoProps } from '@lobehub/ui';
 import { FooterColumn } from 'rc-footer/es/column';
 
+import type { NavData } from '@/store';
 import type { SiteCustomToken } from '@/styles/customToken';
 
 import type { HeroConfig } from './hero';
@@ -9,6 +10,13 @@ export interface ApiHeaderConfig {
   docUrl?: string | false;
   match?: string[];
   pkg?: string;
+  services?: {
+    'Anvaka Graph'?: boolean;
+    'BundlePhobia'?: boolean;
+    'NPM'?: boolean;
+    'PackagePhobia'?: boolean;
+    'UNPKG'?: boolean;
+  };
   sourceUrl?: string | false;
   type?: 'component' | 'doc';
 }
@@ -39,6 +47,7 @@ export interface SiteThemeConfig {
   logo?: string;
   logoType?: LogoProps['type'];
   name?: string;
+  nav?: NavData;
   simulator?: boolean;
   simulatorPath: string;
   simulatorUrl: string;

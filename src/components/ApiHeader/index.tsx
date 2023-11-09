@@ -55,10 +55,6 @@ export interface ApiTitleProps extends ApiHeaderProps {
 
 export interface ServiceItem {
   /**
-   * @title 服务描述
-   */
-  children: string;
-  /**
    * @title 服务图标
    */
   icon: ReactNode;
@@ -66,6 +62,10 @@ export interface ServiceItem {
    * @title 服务标签
    */
   label: string;
+  /**
+   * @title 服务描述
+   */
+  name: string;
   /**
    * @title 服务链接
    */
@@ -90,13 +90,13 @@ export const ApiHeader = memo<ApiTitleProps>(
 
     const items = [
       sourceUrl && {
-        children: 'Source',
         icon: <Icon icon={Github} />,
+        name: 'Source',
         url: sourceUrl,
       },
       docUrl && {
-        children: 'Edit',
         icon: <Icon icon={Edit3} />,
+        name: 'Edit',
         url: docUrl,
       },
     ].filter(Boolean) as ServiceItem[];
@@ -135,7 +135,7 @@ export const ApiHeader = memo<ApiTitleProps>(
                   >
                     <Flexbox align={'center'} className={styles.text} gap={8} horizontal>
                       {item.icon}
-                      {item.children}
+                      {item.name}
                     </Flexbox>
                   </a>
                 ))}
@@ -145,7 +145,7 @@ export const ApiHeader = memo<ApiTitleProps>(
                   <a href={item.url} key={index} rel="noreferrer" target={'_blank'}>
                     <Flexbox align={'center'} className={styles.text} gap={8} horizontal>
                       {item.icon}
-                      {item.children}
+                      {item.name}
                     </Flexbox>
                   </a>
                 ))}

@@ -2,7 +2,7 @@ import isEqual from 'fast-deep-equal';
 import { memo, useMemo } from 'react';
 
 import { ApiHeader as Header } from '@/components/ApiHeader';
-import { apiHeaderSel, useSiteStore } from '@/store';
+import { apiHeaderSel, themeConfig, useSiteStore } from '@/store';
 
 import BundlephobiaFilled from './BundlephobiaFilled';
 import Graph from './Graph';
@@ -12,43 +12,51 @@ import Unpkg from './Unpkg';
 
 const ApiHeader = memo(() => {
   const props = useSiteStore(apiHeaderSel, isEqual);
+  const config = useSiteStore(themeConfig, isEqual);
+
   const { pkg } = props;
 
   const packages = useMemo(() => {
     const packageURL = encodeURIComponent(String(pkg));
-    return [
+
+    const allServeces = [
       {
-        children: 'NPM',
         icon: <NpmFilled />,
         label: 'NPM',
+        name: 'NPM',
         url: `https://www.npmjs.com/package/${packageURL}`,
       },
       {
-        children: 'UNPKG',
         icon: <Unpkg />,
         label: 'Check package files',
+        name: 'UNPKG',
         url: `https://unpkg.com/browse/${packageURL}/`,
       },
       {
-        children: 'BundlePhobia',
         icon: <BundlephobiaFilled />,
         label: 'Check bundle size',
+        name: 'BundlePhobia',
         url: `https://bundlephobia.com/package/${packageURL}`,
       },
       {
-        children: 'PackagePhobia',
         icon: <PackagePhobia />,
         label: 'Check package size',
+        name: 'PackagePhobia',
         url: `https://packagephobia.com/result?p=${packageURL}`,
       },
 
       {
-        children: 'Anvaka Graph',
         icon: <Graph />,
         label: 'Dependence graph',
+        name: 'Anvaka Graph',
         url: `https://npm.anvaka.com/#/view/2d/${encodeURIComponent(packageURL)}`,
       },
     ];
+    const aviableableServeces = allServeces.filter(
+      (item) => Object.keys(config?.apiHeader?.services)?.includes(item.name),
+    );
+
+    return aviableableServeces;
   }, [pkg]);
 
   return <Header serviceList={packages} {...props} />;

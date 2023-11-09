@@ -45,7 +45,11 @@ export interface SiteStore {
 }
 
 export const initialState: SiteStore = {
-  locale: { id: 'zh-CN', name: '中文', suffix: '' },
+  locale: {
+    id: 'en-US',
+    name: 'English',
+    suffix: '',
+  },
   location: {
     hash: '',
     key: '',

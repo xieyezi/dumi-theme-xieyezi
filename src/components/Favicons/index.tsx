@@ -30,8 +30,8 @@ const Favicons = memo(() => {
         href="https://registry.npmmirror.com/@lobehub/assets-favicons/1.1.0/files/assets/safari-pinned-tab.svg"
         rel="mask-icon"
       />
-      <meta content="LobeHub" name="apple-mobile-web-app-title" />
-      <meta content="LobeHub" name="application-name" />
+      <meta content="xieyezi" name="apple-mobile-web-app-title" />
+      <meta content="xieyezi" name="application-name" />
       <meta content="#000000" name="msapplication-TileColor" />
       <meta content="#000000" name="theme-color" />
     </Helmet>

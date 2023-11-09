@@ -5,24 +5,24 @@ import { Center } from 'react-layout-kit';
 
 const items: FeaturesProps['items'] = [
   {
-    description: 'Intuitive and readable documentation with user-friendly interface.',
+    description: '文档直观、可读性强，用户友好。',
     icon: Zap,
-    title: 'Modern',
+    title: '现代化',
   },
   {
-    description: 'Well-adapted for mobile devices.',
+    description: '对移动设备进行良好的适配。',
     icon: Smartphone,
-    title: 'Mobile Device Compatibility',
+    title: '移动设备适配',
   },
   {
-    description: 'Automatically detects dark mode and can change themes accordingly.',
+    description: '自动识别暗黑模式，可以自动更改主题。',
     icon: Moon,
-    title: 'Light and Dark Mode',
+    title: '浅色和暗黑模式',
   },
   {
-    description: 'Built on Ant Design v5, providing more customization options.',
+    description: '基于antd v5，可定制性更强。',
     icon: Palette,
-    title: 'Customizable',
+    title: '可定制',
   },
 ];
 
@@ -74,7 +74,7 @@ export default () => {
   return (
     <Center gap={32}>
       <Center>
-        <h2 style={{ fontSize: 20 }}>To install dumi-theme-xieyezi, run the following command:</h2>
+        <h2 style={{ fontSize: 20 }}>安装 dumi-theme-xieyezi，请运行以下命令：</h2>
         {packageManager()}
         <Snippet language="bash" style={{ marginTop: 10 }} type="block">
           {comannd}

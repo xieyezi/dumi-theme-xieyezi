@@ -1,5 +1,5 @@
 import { Giscus } from '@lobehub/ui';
-import { useResponsive } from 'antd-style';
+import { useResponsive, useTheme } from 'antd-style';
 import { useOutlet } from 'dumi';
 import isEqual from 'fast-deep-equal';
 import { memo, useCallback, useEffect } from 'react';
@@ -14,7 +14,9 @@ import { useStyles } from './styles';
 
 const Documents = memo(() => {
   const outlet = useOutlet();
+  const theme = useTheme();
   const { mobile } = useResponsive();
+
   const config = useSiteStore(themeConfig, isEqual);
   const { isApiPage, giscus } = useSiteStore(
     (st) => ({ giscus: giscusSel(st), isApiPage: isApiPageSel(st) }),
@@ -23,7 +25,6 @@ const Documents = memo(() => {
   const { styles } = useStyles();
 
   useEffect(() => {
-    console.log(config);
     window.scrollTo(0, 0);
     document.body.scrollTo(0, 0);
   }, [location.pathname]);
@@ -51,10 +52,10 @@ const Documents = memo(() => {
     return (
       <div
         className={styles.content}
-        style={{ marginBottom: 48, marginLeft: 48, padding: mobile ? 0 : 24 }}
+        style={{ marginBottom: 48, marginLeft: 48, padding: mobile ? 0 : theme.docPadding }}
       >
         {isApiPage ? (
-          <div style={{ padding: mobile ? 16 : 0, width: '100%' }}>
+          <div style={{ padding: mobile ? theme.mobilePadding : 0, width: '100%' }}>
             <ApiHeader />
           </div>
         ) : undefined}
@@ -70,7 +71,9 @@ const Documents = memo(() => {
     <div>
       <Gradient />
       <Doc />
-      {config.simulator && <Simulator path={config.simulatorPath} src={config.simulatorUrl} />}
+      {!mobile && config.simulator && (
+        <Simulator path={config.simulatorPath} src={config.simulatorUrl} />
+      )}
     </div>
   );
 });

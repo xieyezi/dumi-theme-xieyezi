@@ -49,8 +49,10 @@ const languageMap: Record<string, string> = {
 
 const displayLangMap: Record<string, string> = {
   'en-US': 'EN',
-  'tr-TR': '泰',
-  'zh-CN': '中 ',
+  'jp-JP': 'JP',
+  'ko-KR': 'KR',
+  'tr-TR': 'TR',
+  'zh-CN': 'CN',
 };
 
 const SingleSwitch = memo<{ current: ILocaleItem; locale: ILocaleItem }>(({ locale, current }) => {
