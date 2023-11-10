@@ -6,6 +6,20 @@ import type { SiteCustomToken } from '@/styles/customToken';
 
 import type { HeroConfig } from './hero';
 
+export type Intl =
+  | 'en-US'
+  | 'zh-CN'
+  | 'de-DE'
+  | 'es-ES'
+  | 'fr-FR'
+  | 'it-IT'
+  | 'jp-JP'
+  | 'ko-KR'
+  | 'pt-BR'
+  | 'ru-RU'
+  | 'tr-TR'
+  | 'vi-VN';
+
 export interface ApiHeaderConfig {
   docUrl?: string | false;
   match?: string[];
@@ -30,11 +44,11 @@ export interface FooterConfig {
 }
 
 export interface SiteThemeConfig {
-  actions: HeroProps['actions'];
+  actions: Partial<Record<string, HeroProps['actions']>>;
   apiHeader?: ApiHeaderConfig | false;
-  description?: string;
+  description?: Partial<Record<Intl, string>>;
   docStyle?: 'block' | 'pure';
-  features: FeaturesProps['items'];
+  features?: Partial<Record<Intl, FeaturesProps['items']>>;
   footer?: string | false;
   footerConfig?: FooterConfig;
   giscus?: {
@@ -48,7 +62,7 @@ export interface SiteThemeConfig {
   logo?: string;
   logoType?: LogoProps['type'];
   name?: string;
-  nav?: NavData;
+  nav?: Partial<Record<Intl, NavData>>;
   simulator?: boolean;
   simulatorPath: string;
   simulatorUrl: string;

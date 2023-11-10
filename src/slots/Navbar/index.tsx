@@ -27,7 +27,6 @@ const Navbar = memo(() => {
 
   const nav = useSiteStore((s) => s.navData, shallow);
   const activePath = useSiteStore(activePathSel);
-
   return (
     <>
       <TabsNav
