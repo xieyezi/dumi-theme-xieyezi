@@ -14,7 +14,7 @@ const themeConfig = {
       text: 'Github',
     },
     {
-      link: '/guide/intro',
+      link: '/components/example',
       text: 'Get Started',
       type: 'primary',
     },
@@ -38,8 +38,7 @@ const themeConfig = {
   },
   logo: 'https://avatars.githubusercontent.com/u/16821989?v=4',
   nav: [
-    { link: '/guide/intro', title: 'Guide' },
-    { link: '/components/button', title: 'Components' },
+    { link: '/components/example', title: 'Components' },
     { link: '/changelog', title: 'Changelog' },
   ],
   simulator: true,

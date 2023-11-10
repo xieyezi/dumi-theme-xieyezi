@@ -17,6 +17,7 @@ export interface ApiHeaderConfig {
     'PackagePhobia'?: boolean;
     'UNPKG'?: boolean;
   };
+
   sourceUrl?: string | false;
   type?: 'component' | 'doc';
 }
