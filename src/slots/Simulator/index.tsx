@@ -22,22 +22,29 @@ const Simulator: FC<SimulatorProps> = ({ src, path }) => {
   }, [windowHeight]);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setScrollTop(window.scrollY);
-      console.log(scrollTop);
-    });
-    window.addEventListener('resize', () => {
+    const handleSrcoll = () => {
+      setScrollTop(document.body.scrollTop);
+    };
+
+    const handleResize = () => {
+      //FIXEME:  替换为document
       setWindowHeight(window.innerHeight);
-    });
+    };
+
+    document.body.addEventListener('scroll', handleSrcoll);
+    document.body.addEventListener('resize', handleResize);
+
+    return () => {
+      document.body.removeEventListener('scroll', handleSrcoll);
+      document.body.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   useEffect(() => {
-    // 切换 iframe 内部的路径
     iframeMessageSwap.postMessage('navigate', path);
   }, [path]);
 
   useEffect(() => {
-    // 切换 iframe 内部的主题
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     theme && iframeMessageSwap.postMessage('theme', theme);
   }, [theme]);
