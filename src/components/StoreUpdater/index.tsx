@@ -1,6 +1,5 @@
 import { useDebounceEffect } from 'ahooks';
 import {
-  useIntl,
   useLocale,
   useLocation,
   useNavData,
@@ -10,7 +9,7 @@ import {
   useTabMeta,
 } from 'dumi';
 import isEqual from 'fast-deep-equal';
-import React, { type DependencyList, type EffectCallback, useEffect, useRef } from 'react';
+import React, { type DependencyList, type EffectCallback, useEffect } from 'react';
 
 import { SiteStore, useSiteStore } from '@/store/useSiteStore';
 
@@ -58,14 +57,7 @@ const useSyncState = <T extends keyof SiteStore>(
   }, [value]);
 };
 
-const HOME_NAV = {
-  activePath: '/',
-  link: '/',
-  title: 'Home',
-};
-
 export const StoreUpdater = () => {
-  const homeNav = useRef(HOME_NAV);
   const siteData: any = useSiteData();
   const sidebar = useSidebarData();
   const routeMeta = useRouteMeta();
@@ -73,7 +65,6 @@ export const StoreUpdater = () => {
   const navData = useNavData();
   const location = useLocation();
   const locale = useLocale();
-  const intl = useIntl();
 
   useSyncState('siteData', siteData, () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -95,18 +86,10 @@ export const StoreUpdater = () => {
   useSyncState('locale', locale);
 
   useSyncState('navData', navData, () => {
-    const data = siteData.themeConfig.hideHomeNav ? navData : [homeNav.current, ...navData];
+    const data = [...navData];
 
     useSiteStore.setState({ navData: data });
   });
-
-  useEffect(() => {
-    console.log('sdsds', intl.formatMessage({ id: 'header.home' }));
-    homeNav.current = {
-      ...HOME_NAV,
-      title: intl.formatMessage({ id: 'header.home' }),
-    };
-  }, [locale]);
 
   return false;
 };

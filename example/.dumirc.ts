@@ -29,7 +29,7 @@ const themeConfig = defineThemeConfig({
         text: 'Github',
       },
       {
-        link: '/components/example',
+        link: '/components/example-jp',
         text: 'はじめる',
         type: 'primary',
       },
@@ -42,7 +42,7 @@ const themeConfig = defineThemeConfig({
         text: 'Github',
       },
       {
-        link: '/components/example',
+        link: '/components/example-ko',
         text: '시작하기',
         type: 'primary',
       },
@@ -55,7 +55,7 @@ const themeConfig = defineThemeConfig({
         text: 'Github',
       },
       {
-        link: '/components/example',
+        link: '/components/example-tr',
         text: 'Başla',
         type: 'primary',
       },
@@ -68,7 +68,7 @@ const themeConfig = defineThemeConfig({
         text: 'Github',
       },
       {
-        link: '/components/example',
+        link: '/components/example-cn',
         text: '开始使用',
         type: 'primary',
       },
@@ -101,24 +101,29 @@ const themeConfig = defineThemeConfig({
   logo: 'https://avatars.githubusercontent.com/u/16821989?v=4',
   nav: {
     'en-US': [
+      { link: '/', title: 'Home' },
       { link: '/components/example', title: 'Components' },
       { link: '/changelog', title: 'Changelog' },
     ],
     'jp-JP': [
-      { link: '/components/example', title: 'コンポーネント' },
-      { link: '/changelog', title: '更新履歴' },
+      { link: '/-jp', title: 'ホーム' },
+      { link: '/components/example-jp', title: 'コンポーネント' },
+      { link: '/changelog-jp', title: '更新履歴' },
     ],
     'ko-KR': [
-      { link: '/components/example', title: '구성 요소' },
-      { link: '/changelog', title: '변경 내역' },
+      { link: '/-ko', title: '홈' },
+      { link: '/components/example-ko', title: '구성 요소' },
+      { link: '/changelog-ko', title: '변경 내역' },
     ],
     'tr-TR': [
-      { link: '/components/example', title: 'Bileşenler' },
-      { link: '/changelog', title: 'Değişiklikler' },
+      { link: '/-tr', title: 'Anasayfa' },
+      { link: '/components/example-tr', title: 'Bileşenler' },
+      { link: '/changelog-tr', title: 'Değişiklikler' },
     ],
     'zh-CN': [
-      { link: '/components/example', title: '组件' },
-      { link: '/changelog', title: '更新日志' },
+      { link: '/-cn', title: '首页' },
+      { link: '/components/example-cn', title: '组件' },
+      { link: '/changelog-cn', title: '更新日志' },
     ],
   },
   simulator: true,

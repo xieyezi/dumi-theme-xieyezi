@@ -38,6 +38,7 @@ dumi-theme-xieyezi is a documentation site theme package designed for `Dumi 2`. 
 - [🤝 Contributing](#-contributing)
 - [🔗 Links](#-links)
   - [More Products](#more-products)
+    - [📝 License](#-license)
 
 ####
 
@@ -94,7 +95,6 @@ interface SiteThemeConfig {
     repoId: string;
   };
   hero?: HeroConfig | Record<string, HeroConfig>;
-  hideHomeNav?: boolean;
   logo?: string;
   logoType?: LogoProps['type'];
   name?: string;

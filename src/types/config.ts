@@ -58,7 +58,6 @@ export interface SiteThemeConfig {
     repoId: string;
   };
   hero?: HeroConfig | Record<string, HeroConfig>;
-  hideHomeNav?: boolean;
   logo?: string;
   logoType?: LogoProps['type'];
   name?: string;

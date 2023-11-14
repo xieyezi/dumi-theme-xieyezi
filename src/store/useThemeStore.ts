@@ -2,6 +2,8 @@ import type { ThemeMode } from 'antd-style';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
+import { THEME_KEY } from '@/constants';
+
 export interface ThemeStore {
   themeMode: ThemeMode;
 }
@@ -10,6 +12,6 @@ export const useThemeStore = create<ThemeStore>()(
     () => ({
       themeMode: 'auto' as ThemeMode,
     }),
-    { name: 'DUMI_THEM_MODE_STORE' },
+    { name: THEME_KEY },
   ),
 );

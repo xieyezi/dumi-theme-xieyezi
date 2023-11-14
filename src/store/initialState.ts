@@ -11,6 +11,7 @@ import { PICKED_PKG_FIELDS } from 'dumi/dist/constants';
 import type { Location } from 'history';
 import { ComponentType } from 'react';
 
+import { LOCALE_KEY } from '@/constants';
 import { SiteThemeConfig } from '@/types';
 
 export type NavData = (INavItem & { children?: INavItem[] | undefined })[];
@@ -44,49 +45,57 @@ export interface SiteStore {
   tabMeta?: NonNullable<IRouteMeta['tabs']>[0]['meta'];
 }
 
-export const initialState: SiteStore = {
-  locale: {
-    id: 'en-US',
-    name: 'English',
-    suffix: '',
-  },
-  location: {
-    hash: '',
-    key: '',
-    pathname: '',
-    search: '',
-    state: '',
-  },
-  navData: [],
+const defaultLocale = {
+  id: 'en-US',
+  name: 'English',
+  suffix: '',
+};
 
-  routeMeta: {
-    // @ts-ignore
-    frontmatter: {},
+export const initialState = () => {
+  const targetLocale = window.localStorage.getItem(LOCALE_KEY)
+    ? JSON.parse(window.localStorage.getItem(LOCALE_KEY)!)
+    : defaultLocale;
 
-    tabs: undefined,
+  return {
+    locale: targetLocale,
+    location: {
+      hash: '',
+      key: '',
+      pathname: '',
+      search: '',
+      state: '',
+    },
+    navData: [],
 
-    texts: [],
+    routeMeta: {
+      // @ts-ignore
+      frontmatter: {},
 
-    toc: [],
-  },
+      tabs: undefined,
 
-  sidebar: [],
+      texts: [],
 
-  siteData: {
-    components: {},
+      toc: [],
+    },
 
-    demos: {},
+    sidebar: [],
 
-    entryExports: {},
+    siteData: {
+      components: {},
 
-    loading: true,
+      demos: {},
 
-    locales: [],
+      entryExports: {},
 
-    pkg: {},
-    // @ts-ignore
-    setLoading: undefined,
-    // @ts-ignore
-    themeConfig: {},
-  },
+      loading: true,
+
+      locales: [],
+
+      pkg: {},
+      // @ts-ignore
+      setLoading: undefined,
+      // @ts-ignore
+      themeConfig: {},
+    },
+  };
 };

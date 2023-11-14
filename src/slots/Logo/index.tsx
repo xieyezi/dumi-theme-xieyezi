@@ -21,7 +21,7 @@ const Logo = memo(() => {
 
   return (
     config && (
-      <Link className={cx(styles)} to={'base' in locale ? locale.base : '/'}>
+      <Link className={cx(styles)} to={'base' in locale ? locale.base : `/${locale.suffix}`}>
         {config.logo ? (
           <>
             <Avatar size={mobile ? 32 : 36} src={ImgLogo()} />

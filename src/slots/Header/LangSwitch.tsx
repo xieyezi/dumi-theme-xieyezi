@@ -3,6 +3,7 @@ import { Link, history, useLocation, useSiteData } from 'dumi';
 import { memo, useEffect, useState } from 'react';
 
 import NativeSelect from '@/components/NativeSelect';
+import { LOCALE_KEY } from '@/constants';
 import { useSiteStore } from '@/store';
 
 type ILocaleItem = ReturnType<typeof useSiteData>['locales'][0];
@@ -83,8 +84,8 @@ const SingleSwitch = memo<{ current: ILocaleItem; locale: ILocaleItem }>(({ loca
 });
 
 const LangSwitch = memo(() => {
-  const locales = useSiteStore((s) => s.siteData.locales);
   const current = useSiteStore((s) => s.locale);
+  const locales = useSiteStore((s) => s.siteData.locales);
 
   // do not render in single language
   if (locales.length <= 1) return;
@@ -99,7 +100,7 @@ const LangSwitch = memo(() => {
             target: locales[index],
           }),
         );
-
+        window.localStorage.setItem(LOCALE_KEY, JSON.stringify(locales[index]));
         history.push(
           getTargetLocalePath({
             current,
