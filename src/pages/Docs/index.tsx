@@ -1,6 +1,6 @@
 import { Giscus } from '@lobehub/ui';
 import { useResponsive, useTheme } from 'antd-style';
-import { useOutlet } from 'dumi';
+import { useLocation, useOutlet } from 'dumi';
 import isEqual from 'fast-deep-equal';
 import { memo, useCallback, useEffect } from 'react';
 import { shallow } from 'zustand/shallow';
@@ -15,6 +15,7 @@ import { useStyles } from './styles';
 const Documents = memo(() => {
   const outlet = useOutlet();
   const theme = useTheme();
+  const location = useLocation();
   const { mobile } = useResponsive();
 
   const config = useSiteStore(themeConfig, isEqual);
@@ -71,9 +72,7 @@ const Documents = memo(() => {
     <div>
       <Gradient />
       <Doc />
-      {!mobile && config.simulator && (
-        <Simulator path={config.simulatorPath} src={config.simulatorUrl} />
-      )}
+      {!mobile && <Simulator path={location.pathname} src={config.simulatorUrl} />}
     </div>
   );
 });

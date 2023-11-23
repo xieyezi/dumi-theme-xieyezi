@@ -7,6 +7,7 @@ import { useThemeStore } from '@/store/useThemeStore';
 const ThemeSwitch = memo(() => {
   const themeMode = useThemeStore((s) => s.themeMode);
   const setColorMode = usePrefersColor()[2];
+
   useEffect(() => setColorMode(themeMode), [themeMode]);
 
   return (

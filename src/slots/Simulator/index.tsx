@@ -1,6 +1,8 @@
-import { FC, memo, useEffect, useMemo, useState } from 'react';
+import { FC, memo, useEffect, useMemo, useRef, useState } from 'react';
 
-import { iframeMessageSwap } from '../../plugin/iframeMessageSwap';
+import { useThemeStore } from '@/store/useThemeStore';
+
+import { IframeMessageSwap } from '../../plugin/iframeMessageSwap';
 import { useStyles } from './style';
 
 export interface SimulatorProps {
@@ -8,12 +10,15 @@ export interface SimulatorProps {
   src: string;
 }
 
+const iframeMessageSwap = new IframeMessageSwap();
+
 const Simulator: FC<SimulatorProps> = ({ src, path }) => {
-  const [windowHeight, setWindowHeight] = useState(0);
+  const simulatorRef = useRef(null);
   const [scrollTop, setScrollTop] = useState(0);
-  const theme = 'dark';
+  const [windowHeight, setWindowHeight] = useState(0);
 
   const { styles, cx } = useStyles();
+  const theme = useThemeStore((s) => s.themeMode);
 
   const simulatorStyle = useMemo(() => {
     const height = Math.min(640, window.innerHeight - 90);
@@ -22,6 +27,17 @@ const Simulator: FC<SimulatorProps> = ({ src, path }) => {
   }, [windowHeight]);
 
   useEffect(() => {
+    iframeMessageSwap.postMessage('navigate', path);
+  }, [path]);
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    theme && iframeMessageSwap.postMessage('theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    iframeMessageSwap.setRef(simulatorRef.current as unknown as HTMLIFrameElement);
+
     const handleSrcoll = () => {
       setScrollTop(document.body.scrollTop);
     };
@@ -40,20 +56,11 @@ const Simulator: FC<SimulatorProps> = ({ src, path }) => {
     };
   }, []);
 
-  useEffect(() => {
-    iframeMessageSwap.postMessage('navigate', path);
-  }, [path]);
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    theme && iframeMessageSwap.postMessage('theme', theme);
-  }, [theme]);
-
   return (
     <div className={cx(styles.simulator, scrollTop > 60 ? styles.simulatorFixed : '')}>
       <iframe
         id="simulator"
-        ref={iframeMessageSwap.setRef}
+        ref={simulatorRef}
         src={src}
         style={simulatorStyle}
         title="incall-design-rn-iframe"

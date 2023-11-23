@@ -126,9 +126,7 @@ const themeConfig = defineThemeConfig({
       { link: '/changelog-cn', title: '更新日志' },
     ],
   },
-  simulator: true,
-  simulatorPath: '',
-  simulatorUrl: 'http://localhost:19006',
+  simulatorUrl: 'http://127.0.0.1:5173/',
   socialLinks: {
     github: homepage,
   },

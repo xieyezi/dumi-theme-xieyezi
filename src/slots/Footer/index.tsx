@@ -43,7 +43,7 @@ const Footer = memo(() => {
           </Center>
         ) : (
           <Center horizontal>
-            Copyright © 2022-{new Date().getFullYear()} <Divider type={'vertical'} />
+            Copyright © 2023-{new Date().getFullYear()} <Divider type={'vertical'} />
             <span dangerouslySetInnerHTML={{ __html: bottomFooter }} />
           </Center>
         )

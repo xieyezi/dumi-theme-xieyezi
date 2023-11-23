@@ -62,8 +62,6 @@ export interface SiteThemeConfig {
   logoType?: LogoProps['type'];
   name?: string;
   nav?: Partial<Record<Intl, NavData>>;
-  simulator?: boolean;
-  simulatorPath: string;
   simulatorUrl: string;
   siteToken?: SiteConfigToken;
   socialLinks?: {

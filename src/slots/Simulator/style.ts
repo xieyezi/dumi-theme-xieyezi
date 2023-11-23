@@ -33,7 +33,8 @@ export const useStyles = createStyles(({ token, css }) => {
     `,
     simulatorFixed: css`
       position: fixed;
-      top: ${token.docPadding}px;
+      top: ${token.headerHeight + token.docPadding}px;
+      right: ${token.tocWidth + token.docPadding}px;
     `,
   };
 });
