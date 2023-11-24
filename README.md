@@ -43,11 +43,11 @@ Usage After installation, start the site with `dumi`, and the theme will be auto
 
 ```ts
 interface SiteThemeConfig {
-  actions: HeroProps['actions'];
+  actions: Partial<Record<string, HeroProps['actions']>>;
   apiHeader?: ApiHeaderConfig | false;
-  description?: string;
+  description?: Partial<Record<Intl, string>>;
   docStyle?: 'block' | 'pure';
-  features: FeaturesProps['items'];
+  features?: Partial<Record<Intl, FeaturesProps['items']>>;
   footer?: string | false;
   footerConfig?: FooterConfig;
   giscus?: {
@@ -60,6 +60,8 @@ interface SiteThemeConfig {
   logo?: string;
   logoType?: LogoProps['type'];
   name?: string;
+  nav?: Partial<Record<Intl, NavData>>;
+  simulatorUrl: string;
   siteToken?: SiteConfigToken;
   socialLinks?: {
     discord?: `https://discord.gg/${string}`;

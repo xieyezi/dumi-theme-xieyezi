@@ -153,9 +153,9 @@ const themeConfig = defineThemeConfig({
   },
   giscus: {
     category: 'Q&A',
-    categoryId: 'DIC_kwDOJloKoM4CXsCu',
-    repo: 'lobehub/lobe-ui',
-    repoId: 'R_kgDOJloKoA',
+    categoryId: 'DIC_kwDOKq9K4M4CbNVp',
+    repo: 'xieyezi/dumi-theme-xieyezi',
+    repoId: 'R_kgDOKq9K4A',
   },
   logo: 'https://avatars.githubusercontent.com/u/16821989?v=4',
   nav: {
