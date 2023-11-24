@@ -5,7 +5,7 @@
     "build:analyze": "ANALYZE=1 dumi build",
     "dev": "dumi dev",
     "postinstall": "npm run setup --unsafe-perm",
-    "preview": "dumi preview --unsafe-perm",
+    "preview": "dumi preview",
     "setup": "dumi setup"
   }
 }
