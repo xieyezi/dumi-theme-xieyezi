@@ -72,4 +72,4 @@ interface SiteThemeConfig {
 ```
 
 > **Note**\
-> For detailed configuration, please refer to the [📘 Type file](https://github.com/lobehub/dumi-theme-xieyezi/blob/master/src/types/config.ts) / [📘 Example](https://github.com/lobehub/dumi-theme-xieyezi/blob/master/example/.dumirc.ts).
+> For detailed configuration, please refer to the [📘 Type file](https://github.com/xieyezi/dumi-theme-xieyezi/blob/master/src/types/config.ts) / [📘 Example](https://github.com/xieyezi/dumi-theme-xieyezi/blob/master/example/.dumirc.ts).
