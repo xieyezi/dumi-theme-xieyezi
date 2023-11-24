@@ -4,25 +4,21 @@ import { useResponsive } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { memo } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
-import { shallow } from 'zustand/shallow';
 
-import { githubSel, useSiteStore } from '@/store';
+import { useSiteStore } from '@/store';
 
 import { getColumns } from './columns';
 import { useStyles } from './style';
 
 const Footer = memo(() => {
-  const { themeConfig, pkg } = useSiteStore((s) => s.siteData, isEqual);
+  const { themeConfig } = useSiteStore((s) => s.siteData, isEqual);
   const { footerConfig, footer } = themeConfig;
-  const githubUrl = useSiteStore(githubSel, shallow);
   const { styles, theme } = useStyles();
   const { mobile } = useResponsive();
 
   if (!footer) return;
 
-  const columns = footerConfig?.columns
-    ? footerConfig?.columns
-    : getColumns({ github: githubUrl || (pkg as any).homepage });
+  const columns = footerConfig?.columns ? footerConfig?.columns : getColumns();
 
   if (footerConfig?.resources) columns[0] = footerConfig?.resources;
   if (footerConfig?.resources) columns[0] = footerConfig?.resources;

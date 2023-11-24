@@ -1,13 +1,5 @@
-import { Icon } from '@lobehub/ui';
-import { Link } from 'dumi';
-import { Bug, FileClock, GitFork, Github } from 'lucide-react';
-import { FooterColumn, FooterColumnItem } from 'rc-footer/es/column';
-
-interface GetColumnParameters {
-  github?: string;
-}
-export const getColumns = ({ github }: GetColumnParameters) => {
-  const resources: FooterColumn = {
+export const getColumns = () => {
+  const resources = {
     items: [
       {
         description: 'AIGC Components',
@@ -18,89 +10,48 @@ export const getColumns = ({ github }: GetColumnParameters) => {
       {
         description: 'Awesome lint configs',
         openExternal: true,
-        title: 'Lobe Lint',
-        url: 'https://github.com/lobehub/lobe-chat',
+        title: 'xieyezi Lint',
+        url: 'https://github.com/xieyezi/preset',
       },
       {
-        description: 'Lobe Dumi Theme',
+        description: 'xieyezi Dumi Theme',
         openExternal: true,
         title: 'Designed for Dumi 2',
-        url: 'https://github.com/lobehub/lobe-flow',
+        url: 'https://github.com/xieyezi/dumi-theme-xieyezi',
       },
     ],
     title: 'Resources',
   };
-  const community: FooterColumn = {
-    items: [
-      github && {
-        icon: <Icon icon={Bug} size="small" />,
-        openExternal: true,
-        title: 'Report Bug',
-        url: `${github}/issues/new/choose`,
-      },
-      github && {
-        icon: <Icon icon={GitFork} size="small" />,
-        openExternal: true,
-        title: 'Request Feature',
-        url: `${github}/issues/new/choose`,
-      },
-    ].filter(Boolean) as FooterColumnItem[],
-    title: 'Community',
-  };
 
-  const help: FooterColumn = {
+  const help = {
     items: [
-      github && {
-        icon: <Icon icon={Github} size="small" />,
+      {
+        description: 'Blog for xieyezi',
         openExternal: true,
-        title: 'GitHub',
-        url: github,
+        title: 'Blog',
+        url: 'https://xieyezi.github.io',
       },
       {
-        LinkComponent: Link,
-        icon: <Icon icon={FileClock} size="small" />,
-        title: 'Changelog',
-        url: '/changelog',
+        description: 'Report Bug',
+        openExternal: true,
+        title: 'xieyezi Dumi Theme',
+        url: 'https://github.com/xieyezi/dumi-theme-xieyezi',
       },
-    ].filter(Boolean) as FooterColumnItem[],
+    ],
     title: 'Help',
   };
 
-  const more: FooterColumn = {
+  const more = {
     items: [
       {
-        description: 'OpenAI Chat Bot',
+        description: 'Github for xieyezi',
         openExternal: true,
-        title: '🤖 Lobe Chat',
-        url: 'https://github.com/lobehub/lobe-chat',
-      },
-      {
-        description: 'Stable Diffusion Extension',
-        openExternal: true,
-        title: '🤯 Lobe Theme',
-        url: 'https://github.com/lobehub/sd-webui-lobe-theme',
-      },
-      {
-        description: 'Gen intelligently',
-        openExternal: true,
-        title: '📝 Readme Generator',
-        url: 'https://ui.lobehub.com',
-      },
-      {
-        description: 'AI Commit CLI',
-        openExternal: true,
-        title: '💌 Lobe Commit',
-        url: 'https://github.com/lobehub/lobe-commit',
-      },
-      {
-        description: 'AI i18n CLI',
-        openExternal: true,
-        title: '🌐 Lobe i18n',
-        url: 'https://github.com/lobehub/lobe-commit',
+        title: 'Github',
+        url: 'https://github.com/xieyezi',
       },
     ],
-    title: 'More Products',
+    title: 'More',
   };
 
-  return [resources, community, help, more];
+  return [resources, help, more];
 };
