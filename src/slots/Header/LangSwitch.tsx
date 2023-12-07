@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { Link, history, useLocation, useSiteData } from 'dumi';
+import { Link, history, useAppData, useLocation, useSiteData } from 'dumi';
 import { memo, useEffect, useState } from 'react';
 
 import NativeSelect from '@/components/NativeSelect';
@@ -12,16 +12,24 @@ function getTargetLocalePath({
   pathname,
   current,
   target,
+  base,
 }: {
+  base?: string;
   current: ILocaleItem;
   pathname: string;
   target: ILocaleItem;
 }) {
+  let modifyPathName = pathname;
+  // fix locales with custom baseURL
+  if (base && pathname.includes(base)) {
+    modifyPathName = `/` + pathname.replace(base, '');
+  }
+
   const clearPath =
     'base' in current
       ? // handle '/en-US/a' => '/a' or '/en-US' => '' => '/'
-        pathname.replace(current.base.replace(/\/$/, ''), '') || '/'
-      : pathname.replace(new RegExp(`${current.suffix}$`), '');
+        modifyPathName.replace(current.base.replace(/\/$/, ''), '') || '/'
+      : modifyPathName.replace(new RegExp(`${current.suffix}$`), '');
 
   return 'base' in target
     ? `${
@@ -57,13 +65,14 @@ const displayLangMap: Record<string, string> = {
 };
 
 const SingleSwitch = memo<{ current: ILocaleItem; locale: ILocaleItem }>(({ locale, current }) => {
+  const appData = useAppData();
   const { pathname } = useLocation();
   const [path, setPath] = useState(() =>
-    getTargetLocalePath({ current, pathname, target: locale }),
+    getTargetLocalePath({ base: appData.basename, current, pathname, target: locale }),
   );
 
   useEffect(() => {
-    setPath(getTargetLocalePath({ current, pathname, target: locale }));
+    setPath(getTargetLocalePath({ base: appData.basename, current, pathname, target: locale }));
   }, [pathname, current.id, locale.id]);
 
   return (
@@ -84,6 +93,7 @@ const SingleSwitch = memo<{ current: ILocaleItem; locale: ILocaleItem }>(({ loca
 });
 
 const LangSwitch = memo(() => {
+  const appData = useAppData();
   const current = useSiteStore((s) => s.locale);
   const locales = useSiteStore((s) => s.siteData.locales);
 
@@ -94,7 +104,9 @@ const LangSwitch = memo(() => {
     <NativeSelect
       onChange={(index) => {
         console.log(
+          'to path:',
           getTargetLocalePath({
+            base: appData.basename,
             current,
             pathname: location.pathname,
             target: locales[index],
@@ -103,6 +115,7 @@ const LangSwitch = memo(() => {
         window.localStorage.setItem(LOCALE_KEY, JSON.stringify(locales[index]));
         history.push(
           getTargetLocalePath({
+            base: appData.basename,
             current,
             pathname: location.pathname,
             target: locales[index],
