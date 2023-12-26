@@ -9,15 +9,16 @@ import type { HeroConfig } from './hero';
 export type Intl =
   | 'en-US'
   | 'zh-CN'
+  | 'th-TH'
   | 'de-DE'
   | 'es-ES'
   | 'fr-FR'
   | 'it-IT'
-  | 'jp-JP'
+  | 'ja-JP'
   | 'ko-KR'
   | 'pt-BR'
   | 'ru-RU'
-  | 'tr-TR'
+  | 'th-TH'
   | 'vi-VN';
 
 export interface ApiHeaderConfig {

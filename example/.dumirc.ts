@@ -77,7 +77,7 @@ const themeConfig = defineThemeConfig({
         type: 'primary',
       },
     ],
-    'jp-JP': [
+    'ja-JP': [
       {
         icon: 'Github',
         link: homepage,
@@ -98,12 +98,12 @@ const themeConfig = defineThemeConfig({
         text: 'Github',
       },
       {
-        link: '/components/example-ko',
+        link: '/components/example-kr',
         text: '시작하기',
         type: 'primary',
       },
     ],
-    'tr-TR': [
+    'th-TH': [
       {
         icon: 'Github',
         link: homepage,
@@ -111,8 +111,8 @@ const themeConfig = defineThemeConfig({
         text: 'Github',
       },
       {
-        link: '/components/example-tr',
-        text: 'Başla',
+        link: '/components/example-th',
+        text: 'เริ่มต้นใช้งาน',
         type: 'primary',
       },
     ],
@@ -140,9 +140,9 @@ const themeConfig = defineThemeConfig({
   },
   description: {
     'en-US': 'this is example for dume-theme-xieyezi',
-    'jp-JP': 'これはdumi-theme-xieyeziの例です',
+    'ja-JP': 'これはdumi-theme-xieyeziの例です',
     'ko-KR': '이것은 dumi-theme-xieyezi의 예입니다',
-    'tr-TR': 'Bu dumi-theme-xieyezi için bir örnektir',
+    'th-TH': 'นี่คือตัวอย่างสำหรับ dumi-theme-xieyezi',
     'zh-CN': '这是 dumi-theme-xieyezi 的示例',
   },
   docStyle: 'block',
@@ -164,20 +164,20 @@ const themeConfig = defineThemeConfig({
       { link: '/components/example', title: 'Components' },
       { link: '/changelog', title: 'Changelog' },
     ],
-    'jp-JP': [
+    'ja-JP': [
       { link: '/-jp', title: 'ホーム' },
       { link: '/components/example-jp', title: 'コンポーネント' },
       { link: '/changelog-jp', title: '更新履歴' },
     ],
     'ko-KR': [
       { link: '/-ko', title: '홈' },
-      { link: '/components/example-ko', title: '구성 요소' },
-      { link: '/changelog-ko', title: '변경 내역' },
+      { link: '/components/example-kr', title: '구성 요소' },
+      { link: '/changelog-kr', title: '변경 내역' },
     ],
-    'tr-TR': [
-      { link: '/-tr', title: 'Anasayfa' },
-      { link: '/components/example-tr', title: 'Bileşenler' },
-      { link: '/changelog-tr', title: 'Değişiklikler' },
+    'th-TH': [
+      { link: '/-th', title: 'หน้าแรก' },
+      { link: '/components/example-th', title: 'ส่วนประกอบ' },
+      { link: '/changelog-th', title: 'ประวัติการเปลี่ยนแปลง' },
     ],
     'zh-CN': [
       { link: '/-cn', title: '首页' },
@@ -206,9 +206,9 @@ export default defineConfig({
   locales: [
     { id: 'en-US', name: 'English', suffix: '' },
     { id: 'zh-CN', name: '简体中文', suffix: '-cn' },
-    { id: 'jp-JP', name: 'にほんご', suffix: '-jp' },
+    { id: 'ja-JP', name: 'にほんご', suffix: '-jp' },
     { id: 'ko-KR', name: '한국어', suffix: '-kr' },
-    { id: 'tr-TR', name: 'ภาษาไทย', suffix: '-tr' },
+    { id: 'th-TH', name: 'ภาษาไทย', suffix: '-th' },
   ],
   mfsu: isWin ? undefined : {},
   npmClient: 'pnpm',
