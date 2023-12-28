@@ -53,7 +53,11 @@ const Documents = memo(() => {
     return (
       <div
         className={styles.content}
-        style={{ marginBottom: 48, marginLeft: 48, padding: mobile ? 0 : theme.docPadding }}
+        style={{
+          marginBottom: 48,
+          marginLeft: mobile ? 0 : 48,
+          padding: mobile ? 0 : theme.docPadding,
+        }}
       >
         {isApiPage ? (
           <div style={{ padding: mobile ? theme.mobilePadding : 0, width: '100%' }}>
